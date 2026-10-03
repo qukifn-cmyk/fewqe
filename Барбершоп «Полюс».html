@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Барбершоп «Полюс»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F5F8;--ink:#14213D;--mute:#56607a;--red:#C8372D;--blue:#1F4E9C;--line:#cfd6e2;--panel:#fff;--onred:#fff;
+--disp:"Alfa Slab One","Rockwell","Georgia",serif;--body:"Work Sans","Helvetica Neue",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1626;--ink:#EEF1F6;--mute:#9aa6bf;--red:#E24A3F;--blue:#5B8BE0;--line:#27324d;--panel:#18223a}}
+:root[data-theme="dark"]{--bg:#0F1626;--ink:#EEF1F6;--mute:#9aa6bf;--red:#E24A3F;--blue:#5B8BE0;--line:#27324d;--panel:#18223a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-family:var(--disp);font-size:24px;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;font-weight:500;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+.pole{background:repeating-linear-gradient(135deg,var(--red) 0 16px,#fff 16px 32px,var(--blue) 32px 48px,#fff 48px 64px);background-size:90.5px 90.5px;animation:spin 3s linear infinite}
+@keyframes spin{to{background-position:0 90.5px}}
+@media (prefers-reduced-motion:reduce){.pole{animation:none}}
+.hero{display:grid;grid-template-columns:56px 1fr;gap:34px;padding:34px 0 70px}
+.hero .pole{border-radius:28px;border:3px solid var(--ink);min-height:320px}
+h1{font:400 clamp(44px,9vw,92px)/.98 var(--disp);margin:0 0 22px;letter-spacing:-.01em}
+.lead{max-width:34em;color:var(--mute);font-size:19px;margin:0 0 30px}
+.btn{display:inline-block;background:var(--red);color:var(--onred);border:0;border-radius:6px;padding:15px 28px;font:600 17px var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;color:var(--mute);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+.band{height:14px}
+section{padding:72px 0}
+h2{font:400 clamp(30px,5vw,44px)/1.1 var(--disp);margin:0 0 30px}
+.price{list-style:none;margin:0;padding:0;max-width:680px}
+.price li{display:flex;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
+.price .n{font-weight:600}
+.price .d{color:var(--mute);font-size:15px;flex:1}
+.price .p{font-family:var(--disp);font-size:21px;white-space:nowrap}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:500}
+.team p{margin:0 0 18px}
+.team b{font-weight:600}
+.booking{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bform{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:680px}
+.bform label{display:flex;flex-direction:column;font-weight:500;font-size:15px;gap:6px}
+.bform .full{grid-column:1/-1}
+input,select{font:17px var(--body);padding:12px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+#ok{display:none;margin-top:22px;padding:18px;border-left:6px solid var(--blue);background:var(--bg);max-width:680px}
+footer{padding:44px 0 56px;color:var(--mute);font-size:15px}
+@media (max-width:720px){.cols{grid-template-columns:1fr;gap:40px}.hero{grid-template-columns:30px 1fr;gap:18px}.hero .pole{border-radius:15px;min-height:240px}nav a:not(:last-child){display:none}.bform{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="logo" href="#">Полюс</a>
+<nav><a href="#prices">Цены</a><a href="#about">Мастера</a><a href="#book">Записаться</a></nav>
+</header>
+<div class="hero">
+<div class="pole" aria-hidden="true"></div>
+<div>
+<h1>Стрижки и бороды без спешки</h1>
+<p class="lead">Барбершоп в центре города. Три мастера, горячее полотенце, правка опасной бритвой и честные цены.</p>
+<a class="btn" href="#book">Записаться на стрижку</a>
+<div class="facts"><span><b>Ежедневно</b> 10:00–21:00</span><span><b>ул. Центральная, 12</b></span><span><b>+7 900 000-00-00</b></span></div>
+</div>
+</div>
+</div>
+<div class="band pole" aria-hidden="true"></div>
+
+<section id="prices"><div class="wrap">
+<h2>Услуги и цены</h2>
+<ul class="price">
+<li><span class="n">Мужская стрижка</span><span class="d">машинка и ножницы, мытьё, укладка</span><span class="p">1 800 ₽</span></li>
+<li><span class="n">Моделирование бороды</span><span class="d">форма, контур, масло</span><span class="p">1 200 ₽</span></li>
+<li><span class="n">Королевское бритьё</span><span class="d">опасная бритва, горячее полотенце</span><span class="p">1 500 ₽</span></li>
+<li><span class="n">Стрижка и борода</span><span class="d">полный комплекс</span><span class="p">2 800 ₽</span></li>
+<li><span class="n">Детская стрижка</span><span class="d">до 12 лет</span><span class="p">1 200 ₽</span></li>
+</ul>
+</div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap cols">
+<div class="team">
+<h2>Мастера</h2>
+<p><b>Артём</b>, старший барбер. Классические и короткие стрижки, десять лет у кресла.</p>
+<p><b>Данил</b>, фейды и текстурные стрижки.</p>
+<p><b>Михаил</b>, бороды и бритьё опасной бритвой.</p>
+</div>
+<div>
+<h2>Часы работы</h2>
+<table class="hours">
+<tr><td>Понедельник – пятница</td><td>10:00–21:00</td></tr>
+<tr><td>Суббота</td><td>10:00–20:00</td></tr>
+<tr><td>Воскресенье</td><td>11:00–18:00</td></tr>
+</table>
+</div>
+</div></section>
+
+<section id="book" class="booking"><div class="wrap">
+<h2>Запись онлайн</h2>
+<div class="bform">
+<label class="full">Услуга
+<select id="svc"><option>Мужская стрижка</option><option>Моделирование бороды</option><option>Королевское бритьё</option><option>Стрижка и борода</option><option>Детская стрижка</option></select></label>
+<label>Мастер
+<select id="mst"><option>Любой свободный</option><option>Артём</option><option>Данил</option><option>Михаил</option></select></label>
+<label>Дата
+<input type="date" id="dt"></label>
+<label>Время
+<select id="tm"><option>11:00</option><option>12:30</option><option>14:00</option><option>16:00</option><option>18:00</option><option>19:30</option></select></label>
+<label>Имя
+<input type="text" id="nm" autocomplete="name"></label>
+<label class="full">Телефон
+<input type="tel" id="ph" autocomplete="tel" placeholder="+7"></label>
+<div class="full"><button class="btn" id="go" type="button">Записаться</button></div>
+</div>
+<div id="ok" role="status"></div>
+</div></section>
+
+<footer><div class="wrap">Барбершоп «Полюс», ул. Центральная, 12 · Ежедневно с 10:00</div></footer>
+
+<script>
+(function(){
+var d=document.getElementById('dt');
+try{var t=new Date();d.min=t.toISOString().slice(0,10);d.value=d.min;}catch(e){}
+document.getElementById('go').addEventListener('click',function(){
+var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),ok=document.getElementById('ok');
+ok.style.display='block';
+if(!nm||!ph||!d.value){ok.textContent='Укажите дату, имя и телефон, чтобы записаться.';return;}
+ok.textContent=nm+', вы записаны: '+document.getElementById('svc').value+', '+d.value+' в '+document.getElementById('tm').value+', мастер: '+document.getElementById('mst').value+'. Мы позвоним на '+ph+' для подтверждения.';
+});
+})();
+</script>
+</body>
+</html>
